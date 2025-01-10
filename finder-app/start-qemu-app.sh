@@ -33,6 +33,6 @@ qemu-system-aarch64 \
         -nographic \
         -smp 1 \
         -kernel ${KERNEL_IMAGE} \
-        -chardev stdio,id=char0,mux=on,logfile=${OUTDIR}/serial.log,signal=off \
+        -chardev stdio,id=char0,mux=on,logfile=${OUTDIR}/serial.log,signal=on \
         -serial chardev:char0 -mon chardev=char0 \
         -append "rdinit=/home/autorun-qemu.sh console=ttyAMA0" -initrd ${INITRD_IMAGE}
