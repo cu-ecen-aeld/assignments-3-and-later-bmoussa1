@@ -12,7 +12,7 @@ jobs:
         steps:
           #- uses: actions/checkout@v2
           #- name: Checkout submodules
-            #run : git submodule update --init --recursive
+            #run: git submodule update --init --recursive
           - name: Run unit test
             run: ./unit-test.sh
     full-test:
@@ -21,11 +21,12 @@ jobs:
         steps:
           #- uses: actions/checkout@v2
           #- name: Checkout submodules
-            #run : git submodule update --init --recursive
-           - name: Install dependencies
-      	     run: |
-               sudo apt update
-               sudo apt install -y build-essential libncurses-dev bison flex libssl-dev libelf-dev
+            #run: git submodule update --init --recursive
+          - name: Install dependencies
+            run: |
+              sudo apt update
+              sudo apt install -y build-essential libncurses-dev bison flex libssl-dev libelf-dev
 
           - name: Run full test
             run: ./full-test.sh
+
