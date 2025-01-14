@@ -25,8 +25,8 @@ jobs:
             
           - name: Install dependencies
             run: |
-            sudo apt update
-            sudo apt install -y build-essential libncurses-dev bison flex libssl-dev libelf-dev gcc-aarch64-linux-gnu
+              sudo apt update
+              sudo apt install -y build-essential libncurses-dev bison flex libssl-dev libelf-dev gcc-aarch64-linux-gnu
       
           - name: Run full test
             run: ./full-test.sh
