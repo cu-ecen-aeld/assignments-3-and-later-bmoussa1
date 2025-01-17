@@ -16,24 +16,17 @@ jobs:
           - name: Run unit test
             run: ./unit-test.sh
     full-test:
-<<<<<<< HEAD
         container: cuaesd/aesd-autotest:24-assignment3
-=======
-        container: cuaesd/aesd-autotest:24-assignment5
->>>>>>> assignments-base/assignment5
         runs-on: self-hosted
         steps:
           - uses: actions/checkout@v2
           - name: Checkout submodules
             run : git submodule update --init --recursive
-<<<<<<< HEAD
             
           - name: Install dependencies
             run: |
               sudo apt update
               sudo apt install -y build-essential libncurses-dev bison flex libssl-dev libelf-dev gcc-aarch64-linux-gnu
-      
-=======
->>>>>>> assignments-base/assignment5
+              
           - name: Run full test
             run: ./full-test.sh
