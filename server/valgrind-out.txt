@@ -1,0 +1,241 @@
+==1386004== Memcheck, a memory error detector
+==1386004== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1386004== Using Valgrind-3.18.1-42b08ed5bd-20211015 and LibVEX; rerun with -h for copyright info
+==1386004== Command: ./aesdsocket
+==1386004== Parent PID: 1386003
+==1386004== 
+--1386004-- 
+--1386004-- Valgrind options:
+--1386004--    --error-exitcode=1
+--1386004--    --leak-check=full
+--1386004--    --show-leak-kinds=all
+--1386004--    --track-origins=yes
+--1386004--    --errors-for-leak-kinds=definite
+--1386004--    --verbose
+--1386004--    --log-file=valgrind-out.txt
+--1386004-- Contents of /proc/version:
+--1386004--   Linux version 6.8.0-51-generic (buildd@lcy02-amd64-057) (x86_64-linux-gnu-gcc-12 (Ubuntu 12.3.0-1ubuntu1~22.04) 12.3.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #52~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Dec  9 15:00:52 UTC 2
+--1386004-- 
+--1386004-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3
+--1386004-- Page sizes: currently 4096, max supported 4096
+--1386004-- Valgrind library directory: /usr/libexec/valgrind
+--1386004-- Reading syms from /home/bmoussa/aesd/aesd-assignments/server/aesdsocket
+--1386004-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+--1386004--   Considering /usr/lib/debug/.build-id/41/86944c50f8a32b47d74931e3f512b811813b64.debug ..
+--1386004--   .. build-id is valid
+--1386004-- Reading syms from /usr/libexec/valgrind/memcheck-amd64-linux
+--1386004--    object doesn't have a symbol table
+--1386004--    object doesn't have a dynamic symbol table
+--1386004-- Scheduler: using generic scheduler lock implementation.
+--1386004-- Reading suppressions file: /usr/libexec/valgrind/default.supp
+==1386004== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-1386004-by-bmoussa-on-???
+==1386004== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-1386004-by-bmoussa-on-???
+==1386004== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-1386004-by-bmoussa-on-???
+==1386004== 
+==1386004== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==1386004== don't want to do, unless you know exactly what you're doing,
+==1386004== or are doing some strange experiment):
+==1386004==   /usr/bin/vgdb --pid=1386004 ...command...
+==1386004== 
+==1386004== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==1386004==   /path/to/gdb ./aesdsocket
+==1386004== and then give GDB the following command
+==1386004==   target remote | /usr/bin/vgdb --pid=1386004
+==1386004== --pid is optional if only one valgrind process is running
+==1386004== 
+--1386004-- REDIR: 0x402aa40 (ld-linux-x86-64.so.2:strlen) redirected to 0x580bcec2 (???)
+--1386004-- REDIR: 0x402a810 (ld-linux-x86-64.so.2:index) redirected to 0x580bcedc (???)
+--1386004-- Reading syms from /usr/libexec/valgrind/vgpreload_core-amd64-linux.so
+--1386004--    object doesn't have a symbol table
+--1386004-- Reading syms from /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so
+--1386004--    object doesn't have a symbol table
+==1386004== WARNING: new redirection conflicts with existing -- ignoring it
+--1386004--     old: 0x0402aa40 (strlen              ) R-> (0000.0) 0x580bcec2 ???
+--1386004--     new: 0x0402aa40 (strlen              ) R-> (2007.0) 0x0484ee30 strlen
+--1386004-- REDIR: 0x4027220 (ld-linux-x86-64.so.2:strcmp) redirected to 0x484fcd0 (strcmp)
+--1386004-- REDIR: 0x402afa0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4853840 (mempcpy)
+--1386004-- Reading syms from /usr/lib/x86_64-linux-gnu/libc.so.6
+--1386004--   Considering /usr/lib/debug/.build-id/49/0fef8403240c91833978d494d39e537409b92e.debug ..
+--1386004--   .. build-id is valid
+==1386004== WARNING: new redirection conflicts with existing -- ignoring it
+--1386004--     old: 0x04910c60 (memalign            ) R-> (1011.0) 0x0484e080 memalign
+--1386004--     new: 0x04910c60 (memalign            ) R-> (1017.0) 0x0484e050 aligned_alloc
+==1386004== WARNING: new redirection conflicts with existing -- ignoring it
+--1386004--     old: 0x04910c60 (memalign            ) R-> (1011.0) 0x0484e080 memalign
+--1386004--     new: 0x04910c60 (memalign            ) R-> (1017.0) 0x0484e020 aligned_alloc
+==1386004== WARNING: new redirection conflicts with existing -- ignoring it
+--1386004--     old: 0x04910c60 (memalign            ) R-> (1011.0) 0x0484e080 memalign
+--1386004--     new: 0x04910c60 (memalign            ) R-> (1017.0) 0x0484e050 aligned_alloc
+==1386004== WARNING: new redirection conflicts with existing -- ignoring it
+--1386004--     old: 0x04910c60 (memalign            ) R-> (1011.0) 0x0484e080 memalign
+--1386004--     new: 0x04910c60 (memalign            ) R-> (1017.0) 0x0484e020 aligned_alloc
+--1386004-- REDIR: 0x4913720 (libc.so.6:strnlen) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x49139e0 (libc.so.6:strpbrk) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x49132e0 (libc.so.6:strcmp) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x4931cd0 (libc.so.6:wcsnlen) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x49146d0 (libc.so.6:memset) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x4930540 (libc.so.6:wcslen) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x4914c10 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x4930370 (libc.so.6:wcschr) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x4913260 (libc.so.6:index) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x4913960 (libc.so.6:rindex) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x49145a0 (libc.so.6:memmove) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x49303f0 (libc.so.6:wcscmp) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x49149e0 (libc.so.6:stpncpy) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x49309b0 (libc.so.6:wmemchr) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x4913830 (libc.so.6:strncmp) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x4914a70 (libc.so.6:strcasecmp) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x4913420 (libc.so.6:strcspn) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x4930470 (libc.so.6:wcscpy) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x49131d0 (libc.so.6:strcat) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x4914b60 (libc.so.6:strncasecmp_l) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x4914480 (libc.so.6:bcmp) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x491c570 (libc.so.6:memrchr) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x4916010 (libc.so.6:strchrnul) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x4913390 (libc.so.6:strcpy) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x4914b10 (libc.so.6:strcasecmp_l) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x49136a0 (libc.so.6:strlen) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x49138d0 (libc.so.6:strncpy) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x4914950 (libc.so.6:stpcpy) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x49143f0 (libc.so.6:memchr) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x4913b00 (libc.so.6:strspn) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x49147d0 (libc.so.6:mempcpy) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x4914ac0 (libc.so.6:strncasecmp) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x4915f80 (libc.so.6:rawmemchr) redirected to 0x483f220 (_vgnU_ifunc_wrapper)
+--1386004-- REDIR: 0x4925650 (libc.so.6:__strrchr_sse2) redirected to 0x484e870 (__strrchr_sse2)
+--1386004-- REDIR: 0x4925950 (libc.so.6:__strlen_sse2) redirected to 0x484ed70 (__strlen_sse2)
+--1386004-- REDIR: 0x492ff60 (libc.so.6:__memset_sse2_unaligned) redirected to 0x4852770 (memset)
+--1386004-- REDIR: 0x4925440 (libc.so.6:__strchrnul_sse2) redirected to 0x4853330 (strchrnul)
+--1386004-- REDIR: 0x49100a0 (libc.so.6:malloc) redirected to 0x4848820 (malloc)
+--1386004-- REDIR: 0x492f850 (libc.so.6:__mempcpy_sse2_unaligned) redirected to 0x4853440 (mempcpy)
+--1386004-- REDIR: 0x4911520 (libc.so.6:calloc) redirected to 0x484d9d0 (calloc)
+--1386004-- REDIR: 0x49103e0 (libc.so.6:free) redirected to 0x484b210 (free)
+--1386004-- REDIR: 0x492f870 (libc.so.6:memcpy@GLIBC_2.2.5) redirected to 0x484fe00 (memcpy@GLIBC_2.2.5)
+--1386004-- REDIR: 0x4913fc0 (libc.so.6:__GI_strstr) redirected to 0x4853ae0 (__strstr_sse2)
+--1386004-- REDIR: 0x4a0db30 (libc.so.6:__memcmp_sse4_1) redirected to 0x4851f80 (__memcmp_sse4_1)
+--1386004-- REDIR: 0x491dd70 (libc.so.6:__strcmp_sse2_unaligned) redirected to 0x484fbd0 (strcmp)
+--1386004-- REDIR: 0x4910740 (libc.so.6:realloc) redirected to 0x484dc50 (realloc)
+--1386004-- REDIR: 0x4925210 (libc.so.6:__strchr_sse2) redirected to 0x484e990 (__strchr_sse2)
+==1386004== Conditional jump or move depends on uninitialised value(s)
+==1386004==    at 0x48E1AD6: __vfprintf_internal (vfprintf-internal.c:1516)
+==1386004==    by 0x48F3499: __vsnprintf_internal (vsnprintf.c:114)
+==1386004==    by 0x48CB855: snprintf (snprintf.c:31)
+==1386004==    by 0x49A16BA: inet_ntoa (inet_ntoa.c:33)
+==1386004==    by 0x109702: handle_client (aesdsocket.c:59)
+==1386004==    by 0x109B52: main (aesdsocket.c:163)
+==1386004==  Uninitialised value was created by a stack allocation
+==1386004==    at 0x109568: handle_client (aesdsocket.c:33)
+==1386004== 
+==1386004== Use of uninitialised value of size 8
+==1386004==    at 0x48C52EB: _itoa_word (_itoa.c:177)
+==1386004==    by 0x48E0ABD: __vfprintf_internal (vfprintf-internal.c:1516)
+==1386004==    by 0x48F3499: __vsnprintf_internal (vsnprintf.c:114)
+==1386004==    by 0x48CB855: snprintf (snprintf.c:31)
+==1386004==    by 0x49A16BA: inet_ntoa (inet_ntoa.c:33)
+==1386004==    by 0x109702: handle_client (aesdsocket.c:59)
+==1386004==    by 0x109B52: main (aesdsocket.c:163)
+==1386004==  Uninitialised value was created by a stack allocation
+==1386004==    at 0x109568: handle_client (aesdsocket.c:33)
+==1386004== 
+==1386004== Conditional jump or move depends on uninitialised value(s)
+==1386004==    at 0x48C52FC: _itoa_word (_itoa.c:177)
+==1386004==    by 0x48E0ABD: __vfprintf_internal (vfprintf-internal.c:1516)
+==1386004==    by 0x48F3499: __vsnprintf_internal (vsnprintf.c:114)
+==1386004==    by 0x48CB855: snprintf (snprintf.c:31)
+==1386004==    by 0x49A16BA: inet_ntoa (inet_ntoa.c:33)
+==1386004==    by 0x109702: handle_client (aesdsocket.c:59)
+==1386004==    by 0x109B52: main (aesdsocket.c:163)
+==1386004==  Uninitialised value was created by a stack allocation
+==1386004==    at 0x109568: handle_client (aesdsocket.c:33)
+==1386004== 
+==1386004== Conditional jump or move depends on uninitialised value(s)
+==1386004==    at 0x48E15C3: __vfprintf_internal (vfprintf-internal.c:1516)
+==1386004==    by 0x48F3499: __vsnprintf_internal (vsnprintf.c:114)
+==1386004==    by 0x48CB855: snprintf (snprintf.c:31)
+==1386004==    by 0x49A16BA: inet_ntoa (inet_ntoa.c:33)
+==1386004==    by 0x109702: handle_client (aesdsocket.c:59)
+==1386004==    by 0x109B52: main (aesdsocket.c:163)
+==1386004==  Uninitialised value was created by a stack allocation
+==1386004==    at 0x109568: handle_client (aesdsocket.c:33)
+==1386004== 
+==1386004== Conditional jump or move depends on uninitialised value(s)
+==1386004==    at 0x48E0C05: __vfprintf_internal (vfprintf-internal.c:1516)
+==1386004==    by 0x48F3499: __vsnprintf_internal (vsnprintf.c:114)
+==1386004==    by 0x48CB855: snprintf (snprintf.c:31)
+==1386004==    by 0x49A16BA: inet_ntoa (inet_ntoa.c:33)
+==1386004==    by 0x109702: handle_client (aesdsocket.c:59)
+==1386004==    by 0x109B52: main (aesdsocket.c:163)
+==1386004==  Uninitialised value was created by a stack allocation
+==1386004==    at 0x109568: handle_client (aesdsocket.c:33)
+==1386004== 
+==1386004== 
+==1386004== HEAP SUMMARY:
+==1386004==     in use at exit: 0 bytes in 0 blocks
+==1386004==   total heap usage: 41 allocs, 41 frees, 106,567 bytes allocated
+==1386004== 
+==1386004== All heap blocks were freed -- no leaks are possible
+==1386004== 
+==1386004== ERROR SUMMARY: 164 errors from 5 contexts (suppressed: 0 from 0)
+==1386004== 
+==1386004== 20 errors in context 1 of 5:
+==1386004== Conditional jump or move depends on uninitialised value(s)
+==1386004==    at 0x48E0C05: __vfprintf_internal (vfprintf-internal.c:1516)
+==1386004==    by 0x48F3499: __vsnprintf_internal (vsnprintf.c:114)
+==1386004==    by 0x48CB855: snprintf (snprintf.c:31)
+==1386004==    by 0x49A16BA: inet_ntoa (inet_ntoa.c:33)
+==1386004==    by 0x109702: handle_client (aesdsocket.c:59)
+==1386004==    by 0x109B52: main (aesdsocket.c:163)
+==1386004==  Uninitialised value was created by a stack allocation
+==1386004==    at 0x109568: handle_client (aesdsocket.c:33)
+==1386004== 
+==1386004== 
+==1386004== 20 errors in context 2 of 5:
+==1386004== Conditional jump or move depends on uninitialised value(s)
+==1386004==    at 0x48E15C3: __vfprintf_internal (vfprintf-internal.c:1516)
+==1386004==    by 0x48F3499: __vsnprintf_internal (vsnprintf.c:114)
+==1386004==    by 0x48CB855: snprintf (snprintf.c:31)
+==1386004==    by 0x49A16BA: inet_ntoa (inet_ntoa.c:33)
+==1386004==    by 0x109702: handle_client (aesdsocket.c:59)
+==1386004==    by 0x109B52: main (aesdsocket.c:163)
+==1386004==  Uninitialised value was created by a stack allocation
+==1386004==    at 0x109568: handle_client (aesdsocket.c:33)
+==1386004== 
+==1386004== 
+==1386004== 20 errors in context 3 of 5:
+==1386004== Conditional jump or move depends on uninitialised value(s)
+==1386004==    at 0x48E1AD6: __vfprintf_internal (vfprintf-internal.c:1516)
+==1386004==    by 0x48F3499: __vsnprintf_internal (vsnprintf.c:114)
+==1386004==    by 0x48CB855: snprintf (snprintf.c:31)
+==1386004==    by 0x49A16BA: inet_ntoa (inet_ntoa.c:33)
+==1386004==    by 0x109702: handle_client (aesdsocket.c:59)
+==1386004==    by 0x109B52: main (aesdsocket.c:163)
+==1386004==  Uninitialised value was created by a stack allocation
+==1386004==    at 0x109568: handle_client (aesdsocket.c:33)
+==1386004== 
+==1386004== 
+==1386004== 52 errors in context 4 of 5:
+==1386004== Conditional jump or move depends on uninitialised value(s)
+==1386004==    at 0x48C52FC: _itoa_word (_itoa.c:177)
+==1386004==    by 0x48E0ABD: __vfprintf_internal (vfprintf-internal.c:1516)
+==1386004==    by 0x48F3499: __vsnprintf_internal (vsnprintf.c:114)
+==1386004==    by 0x48CB855: snprintf (snprintf.c:31)
+==1386004==    by 0x49A16BA: inet_ntoa (inet_ntoa.c:33)
+==1386004==    by 0x109702: handle_client (aesdsocket.c:59)
+==1386004==    by 0x109B52: main (aesdsocket.c:163)
+==1386004==  Uninitialised value was created by a stack allocation
+==1386004==    at 0x109568: handle_client (aesdsocket.c:33)
+==1386004== 
+==1386004== 
+==1386004== 52 errors in context 5 of 5:
+==1386004== Use of uninitialised value of size 8
+==1386004==    at 0x48C52EB: _itoa_word (_itoa.c:177)
+==1386004==    by 0x48E0ABD: __vfprintf_internal (vfprintf-internal.c:1516)
+==1386004==    by 0x48F3499: __vsnprintf_internal (vsnprintf.c:114)
+==1386004==    by 0x48CB855: snprintf (snprintf.c:31)
+==1386004==    by 0x49A16BA: inet_ntoa (inet_ntoa.c:33)
+==1386004==    by 0x109702: handle_client (aesdsocket.c:59)
+==1386004==    by 0x109B52: main (aesdsocket.c:163)
+==1386004==  Uninitialised value was created by a stack allocation
+==1386004==    at 0x109568: handle_client (aesdsocket.c:33)
+==1386004== 
+==1386004== ERROR SUMMARY: 164 errors from 5 contexts (suppressed: 0 from 0)
